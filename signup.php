@@ -1,13 +1,18 @@
 <?php
 require_once 'login.php';
 echo <<<_END
-    <html><head><title>Sign Up</title></head><body>
-    <form method='POST' action='signup.php' enctype='multipart/form-data'>
-        User Name: <input type='text' name='username' size='10'><br><br>
-        Password: <input type='password' name='password' size='10'><br><br>
-        Email: <input type='email' name='email' size='10'><br><br>
-        <input type='submit' value='Submit' name='signup'><br><br>
-    </form>
+    <html><head><link rel='stylesheet' type='text/css' href='css.php'><title>Sign Up</title></head><body>
+    <div class="central">
+        <h5>Decryptoid</h5>
+        <div class="allcenter">
+            <form method='POST' action='signup.php' enctype='multipart/form-data'>
+            User Name: <input type='text' name='username' size='10'><br><br>
+            Password: <input type='password' name='password' size='10'><br><br>
+            Email: <input type='email' name='email' size='10'><br><br>
+            <input type='submit' value='Submit' name='signup'><br><br>
+        </form>
+        </div>
+    </div>
     
 _END;
 

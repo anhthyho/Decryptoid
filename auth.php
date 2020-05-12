@@ -1,7 +1,8 @@
 <?php
 // anhthy ho midterm - cs174
 require_once 'login.php';
-
+echo "<link rel='stylesheet' type='text/css' href='css.php'>";
+ini_set('session.use_only_cookies', 1);
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error)
     die("cannot connect to database");
@@ -28,8 +29,15 @@ if ($conn->connect_error)
                 session_start();
                 $_SESSION['username'] = $un_temp;
                 $_SESSION['password'] = $pw_temp;
-                echo "Hi $row[0], you are now logged in"; 
-                die ("<p><a href=admin.php>Click here to continue</a></p>");
+                
+                //secure session
+                $_SESSION['check'] = hash('ripemd128', $_SERVER['REMOTE_ADDR'] .$_SERVER['HTTP_USER_AGENT']);
+                echo <<<_END
+                    <div class=central>
+                        <h3>Hi $row[0], you are now logged in</h3> 
+                        <h3><p><a href=admin.php>Click here to continue</a></p></h3>
+                    </div>
+                _END;
                 } 
             else {
                 die("Invalid username/password combination");
@@ -44,6 +52,7 @@ if ($conn->connect_error)
     }
     
     $conn->close();
+    echo "</body></html>";
     
     function get_salt($conn, $saltnum, $username)
     {

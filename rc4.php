@@ -58,7 +58,7 @@ function rc4($key_str, $str, $de){
         //echo chr($ans);
         
     }
-    echo "<br>";
+   // echo "<br>";
     $res = implode("", $res);
     return $res;
 }
