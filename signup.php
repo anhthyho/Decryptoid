@@ -1,6 +1,5 @@
 <?php
 require_once 'login.php';
-
 echo <<<_END
     <html><head><title>Sign Up</title></head><body>
     <form method='POST' action='signup.php' enctype='multipart/form-data'>
@@ -42,7 +41,8 @@ function add_user($conn, $user, $password, $email)
     $token = hash('ripemd128', "$salt1$password$salt2");
     $stmt = $conn->prepare("UPDATE admin set password='$token' WHERE user='$user'");
     if ($stmt->execute()){
-        header("Location: admin.php");
+        header("Location: auth.php");
+        die; 
     }else {
         echo "User could not be created";
     }

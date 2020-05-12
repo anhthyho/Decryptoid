@@ -1,9 +1,9 @@
 <?php
 //logic from https://www.pbs.org/wgbh/nova/decoding/doubtrans.html
-$content = "I Like Chicken Nuggets";
-$decrypt = "n egNuetg s  LIeikCh kic";
-$key = "2301";
-$key2 = "120534";
+// $content = "I Like Chicken Nuggets";
+// $decrypt = "n egNuetg s  LIeikCh kic";
+// $key = "2301";
+// $key2 = "120534";
 
 function double_trans($input, $key, $key2, $de)
 {
