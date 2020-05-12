@@ -1,4 +1,4 @@
-<?php
+<?php  //double transposition function - anhthy 174 final
 //logic from https://www.pbs.org/wgbh/nova/decoding/doubtrans.html
 // $content = "I Like Chicken Nuggets";
 // $decrypt = "n egNuetg s  LIeikCh kic";

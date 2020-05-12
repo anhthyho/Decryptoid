@@ -1,12 +1,10 @@
-<?php 
-// A handy function to destroy a session and its data
+<?php  //logout function // session destroy - anhthy 174 final
 session_start();
 $_SESSION = array();
 // Delete all the information in the array
-// setcookie(session_name(), '', time() - 2592000, '/');
+ setcookie(session_name(), '', time() - 2592000, '/');
 session_destroy();
-unset($_SESSION['username']);
-unset($_SESSION['password']);
+session_unset();
 echo <<<_END
     <html><head><link rel='stylesheet' type='text/css' href='css.php'><title>Decrypt/Encrypt</title></head><body>
     <div class="central">

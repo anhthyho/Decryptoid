@@ -1,5 +1,4 @@
-<?php
-// anhthy ho midterm - cs174
+<?php  //auth -> session - anhthy 174 final
 require_once 'login.php';
 echo "<link rel='stylesheet' type='text/css' href='css.php'>";
 ini_set('session.use_only_cookies', 1);

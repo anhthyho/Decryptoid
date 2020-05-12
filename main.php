@@ -1,5 +1,4 @@
-<?php 
-// anhthy ho final - cs174
+<?php  //landing page - anhthy 174 final
 require_once 'login.php';
 echo <<<_END
     <html><head><link rel='stylesheet' type='text/css' href='css.php'><title>Decrypt/Encrypt</title></head><body>

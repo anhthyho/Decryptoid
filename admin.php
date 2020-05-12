@@ -1,5 +1,4 @@
-<?php
-// anhthy ho midterm - cs174
+<?php  //admin form - anhthy 174 final
 require_once 'login.php';
 require_once 'double_trans.php';
 require_once 'rc4.php';

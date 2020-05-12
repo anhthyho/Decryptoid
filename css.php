@@ -1,4 +1,4 @@
-<?php
+<?php  //stylin
 header("Content-type: text/css; charset: UTF-8");
 $linkColor = "#add8e6";
 

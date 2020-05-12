@@ -1,4 +1,4 @@
-<?php
+<?php //sign up form - anhthy 174 final
 require_once 'login.php';
 echo <<<_END
     <html><head><link rel='stylesheet' type='text/css' href='css.php'><title>Sign Up</title></head><body>
