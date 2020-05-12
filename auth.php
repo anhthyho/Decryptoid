@@ -28,7 +28,6 @@ if ($conn->connect_error)
                 session_start();
                 $_SESSION['username'] = $un_temp;
                 $_SESSION['password'] = $pw_temp;
-                echo sizeof($_SESSION);
                 echo "Hi $row[0], you are now logged in"; 
                 die ("<p><a href=admin.php>Click here to continue</a></p>");
                 } 
