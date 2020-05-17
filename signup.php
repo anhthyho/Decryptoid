@@ -1,4 +1,5 @@
-<?php //sign up form - anhthy 174 final
+<?php
+// sign up form - anhthy 174 final
 require_once 'login.php';
 echo <<<_END
     <html><head><link rel='stylesheet' type='text/css' href='css.php'><title>Sign Up</title></head><body>
@@ -27,7 +28,15 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emai
     $password = sanitizeMySQL($conn, $_POST['password']);
     $email = sanitizeMySQL($conn, $_POST['email']);
     // $result = add_info($conn, $advisor, $student, $studentID, $classcode);
-    add_user($conn, $user, $password, $email);
+    if (!preg_match('/^[A-Za-z0-9-_]+$/', $user)) {
+        echo <<<_END
+            <div class="centralsmall">
+                <h1>User can only contains digits, characters, hyphen and underscore. Please try again.</h1>
+            </div>
+        _END;
+    } else {
+        add_user($conn, $user, $password, $email);
+    }
 }
 
 $conn->close();
@@ -45,10 +54,10 @@ function add_user($conn, $user, $password, $email)
 
     $token = hash('ripemd128', "$salt1$password$salt2");
     $stmt = $conn->prepare("UPDATE admin set password='$token' WHERE user='$user'");
-    if ($stmt->execute()){
+    if ($stmt->execute()) {
         header("Location: auth.php");
-        die; 
-    }else {
+        die();
+    } else {
         echo "User could not be created";
     }
     $stmt->close();

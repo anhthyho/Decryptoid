@@ -17,6 +17,16 @@ $lightGray = "#a9a9a9";
   	min-height: 400;
 }
 
+.centralsmall {
+	margin: auto;
+  	width: 300;
+  	background-color: <?=$linkColor?>;
+  	font-family: <?=$font_family?>;
+  	font-size: 15;
+  	padding: 20px;
+  	min-height: 100;
+}
+
 .answer {
 	margin: auto;
   	width: 300;
@@ -33,13 +43,15 @@ margin: auto;
 text-align: center;
 }
 
+
 .box {
-  	width: 150;
+  	width: 100;
   	background-color: <?=$lightGray?>;
-  	height: auto;
-  	margin-bottom: 20px;
-  	display: inline-block;
+  	height: 30;
+  	margin-bottom: 15px;
   	text-align: center;
+  	display: inline-block;
+  	
 }
 
 .box2 {
@@ -62,7 +74,7 @@ input[type=button], input[type=submit] {
   margin: 4px 2px;
   cursor: pointer;
   font-family: <?=$font_family?>;
-  font-size: 13;
+  font-size: 15;
 }
 
 input[type=text]{

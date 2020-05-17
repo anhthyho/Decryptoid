@@ -11,25 +11,30 @@ function rc4($key_str, $str, $de){
     
     $stage = array(); 
     
+    //if decrypted, value should be in hex -> convert 
     if ($de=="decrypt"){
         $str = hex2bin($str);
     }
+    
+    // convert input string to array 
     $str_arr = array();
     for ($i=0; $i<strlen($str); $i++){
         $str_arr[$i] = substr($str, $i, 1);
     }
     
+    // convert key to array 
     $key_len = strlen($key_str);
     $key = array(); 
     for ($i=0; $i<$key_len; $i++){
         $key[$i] = substr($key_str, $i, 1);
     }
     
-    
+    // create array for bits 256
     for ($i=0; $i<256; $i++){
         $stage[$i] = $i;
     }
     
+    // swap based on bit / keys 
     $j=0;
     for ($i=0; $i<256; $i++){
         $j = (($j + $stage[$i] + $key[$i % $key_len]) % 256);
